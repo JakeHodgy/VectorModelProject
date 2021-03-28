@@ -25,7 +25,7 @@ You also need to install NLTK data locally for the tokenizer to work. (https://w
 I believe the rest of the packages are standard for Python3.
 I also have included a small, standard stopwords file to help remove stopwords. You need this file to run the project.
 
-My local environment is on Windows, so for my installation I used Python 3.8.8, and installed packages using PIP package-manager. Similarily for a linux version you can just Git Clone all the files, install your Python packages, and run. 
+My local environment is on Windows, so for my installation I used Python 3.8.8, and installed packages using PIP package-manager. Similarily for a linux version you can just Git Clone all the files, install your Python packages, and run. I also tested it on a Linux distribution and it worked as well.
 
 Running the program with NLTK Package: python3 vectormodel.py true
 
