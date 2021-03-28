@@ -28,7 +28,8 @@ I also have included a small, standard stopwords file to help remove stopwords. 
 My local environment is on Windows, so for my installation I used Python 3.8.8, and installed packages using PIP package-manager. Similarily for a linux version you can just Git Clone all the files, install your Python packages, and run. 
 
 Running the program with NLTK Package: python3 vectormodel.py true
-Running hte program without the NLTK Package: python3 vectormodel.py false
+
+Running the program without the NLTK Package: python3 vectormodel.py false
 
 Extra: Given that some users may not be able to install the NLTK Package or its Data whether that be space requirement or security requirements. I have added an extra argument that allows users to run the program with Tokenization. Given extra time, I would be able to implement my own tokenizer; however, it is a time consuming task to handle every single tokenization case properly. You will see potential accuracy differences without a Tokenizer due to punctuation.
 
