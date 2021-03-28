@@ -4,7 +4,6 @@ import math
 import sys
 import os
 import string
-import nltk
 
 def main():
 
@@ -25,11 +24,15 @@ def main():
 
     if use_tokenizer == 'false':
         print("Warning: Not using a Tokenizer can potentially lead to a decrease in accuracy and query terms including punctuation.")
-    
+    else:
+        print("here")
+        import nltk
+
     #Variables
     token_list = []
     stop_token_list = []
     stem_token_list = []
+    recall_list = []
     total_words = 0
     unique_set = set()
     unique_single_doc_set = set()
@@ -105,6 +108,8 @@ def main():
             
 
 def indexDocument(doc_string, inverted_index, doc_weight, query_weight, doc_id, use_tokenizer):
+    if use_tokenizer == 'true':
+        import nltk
     token_list = []
     stop_token_list = []
     stem_token_list = []
@@ -140,6 +145,8 @@ def indexDocument(doc_string, inverted_index, doc_weight, query_weight, doc_id, 
     return inverted_index
 
 def retrieveDocuments(query, inverted_index, doc_vec_length, doc_weight, query_weight, use_tokenizer):
+    if use_tokenizer == 'true':
+        import nltk
     out_list = []
 
     if use_tokenizer == 'true':
