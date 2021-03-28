@@ -1,4 +1,3 @@
-#Jhodg
 #Jacob Hodgson
 
 import math
@@ -26,20 +25,16 @@ def main():
 
     if use_tokenizer == 'false':
         print("Warning: Not using a Tokenizer can potentially lead to a decrease in accuracy and query terms including punctuation.")
+    
+    #Variables
     token_list = []
     stop_token_list = []
     stem_token_list = []
     total_words = 0
-    total_unique_words = 0
-    frequency_list = []
     unique_set = set()
     unique_single_doc_set = set()
-    final_stem_token_list = []
     inverted_index = {}
-    idf_dict = {}
-    tf_dict = {}
     user_input = ""
-    recall_list = []
 
     doc_id = 0
     total_docs = 0
@@ -75,6 +70,7 @@ def main():
             #token_list = nltk.word_tokenize(line)
             stop_token_list = removeStopwords(token_list)
             stem_token_list = stemWords(stop_token_list)
+
             for token in stem_token_list:
                 unique_single_doc_set.add(token)
 
@@ -87,7 +83,6 @@ def main():
 
     total_unique = len(unique_set)
     
-    line_counter = 0
     while user_input != 'exit':
         user_input = input("Please enter a query. type \'exit\' to stop the program. ")
         user_input = user_input.lower()
@@ -104,7 +99,6 @@ def main():
             #print(str(line_counter+1) + ' ' + str(key+1) + ' ' + str(value) + '\n')
             print("Did you mean?: " + recall_list[key])
             break
-        line_counter += 1
             
 
 
@@ -115,8 +109,6 @@ def indexDocument(doc_string, inverted_index, doc_weight, query_weight, doc_id, 
     stop_token_list = []
     stem_token_list = []
     total_words = 0
-    total_unique_words = 0
-    frequency_list = []
     unique_set = set()
     unique_single_doc_set = set()
     final_stem_token_list = []
@@ -164,9 +156,7 @@ def retrieveDocuments(query, inverted_index, doc_vec_length, doc_weight, query_w
     ranking = {}
     query_list = {}
     token_weights = {}
-    rank_list = []
     final_dict = {}
-    new_counter = 0
 
     for term in stem_token_list:
         if inverted_index.get(term, 0) != 0:
